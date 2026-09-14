@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Beskonačni Horizontalni Vrtuljak - Stabilna Verzija</title>
+  <title>Beskonačni Horizontalni Vrtuljak </title>
   
-  <!-- Provjereni i stabilni GSAP CDN -->
+  <!-- GSAP CDN -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
   
   <style>
@@ -37,7 +37,7 @@
       margin-bottom: 5px;
     }
 
-    /* Širina spremnika prikazuje točno 3 slike s razmakom (3 * 600px + 2 * 20px = 1840px) */
+    /* Širina spremnika prikazuje točno 3 slike s razmakom (3 * 600 + 2 * 20 = 1840) */
     .carousel-container {
       position: relative;
       width: 1840px;
@@ -47,7 +47,6 @@
       box-shadow: 0 20px 40px rgba(0, 0, 0, 0.7);
     }
 
-    /* Traka je sada samo relativni kontejner, slajdovi se pozicioniraju apsolutno */
     .carousel-track {
       width: 100%;
       height: 100%;
@@ -107,7 +106,6 @@
 
   <div class="carousel-container">
     <div class="carousel-track">
-      <!-- Samo 6 originalnih slika, klonovi nam više nisu potrebni jer JS radi savršen krug -->
       <div class="slide"><img src="slike/slika1.jpg" alt="Slika 1"></div>
       <div class="slide"><img src="slike/slika2.jpg" alt="Slika 2"></div>
       <div class="slide"><img src="slike/slika3.jpg" alt="Slika 3"></div>
@@ -166,9 +164,7 @@
           // Izračunavamo gdje bi slika trebala biti u linearnom nizu
           let basePosition = (i * slideWidth) + scrollProxy.x;
           
-          // Ključni popravak: gsap.utils.wrap preraspoređuje svaki slajd pojedinačno.
-          // Čim slika pobjegne lijevo iza -620px, automatski se iscrtava na desnom kraju (3100px)
-          // i obrnuto. Nema treperenja jer matematika ne ovisi o skoku cijele trake.
+          // Čim slika ode lijevo iza -620, automatski se iscrtava na desnom kraju (3100)
           let wrappedX = gsap.utils.wrap(-slideWidth, totalWidth - slideWidth, basePosition);
           
           gsap.set(slide, { 
@@ -186,7 +182,7 @@
         });
       }
 
-      // 2. GLAVNA ANIMACIJA DO ODREDIŠTA
+      // 2. GLAVNA ANIMACIJA 
       function animateTo(targetPosition) {
         gsap.to(scrollProxy, {
           x: targetPosition,
