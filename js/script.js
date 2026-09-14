@@ -42,8 +42,8 @@ document.addEventListener("DOMContentLoaded", () => {
       // Izračunavamo gdje bi slika trebala biti u linearnom nizu
       let basePosition = (i * slideWidth) + scrollProxy.x;
       
-      // Ključni popravak: gsap.utils.wrap preraspoređuje svaki slajd pojedinačno.
-      // Čim slika pobjegne lijevo iza -620px, automatski se iscrtava na desnom kraju (3100px)
+    
+      // Čim slika ode lijevo iza -620, automatski se iscrtava na desnom kraju (3100px)
       // i obrnuto. Nema treperenja jer matematika ne ovisi o skoku cijele trake.
       let wrappedX = gsap.utils.wrap(-slideWidth, totalWidth - slideWidth, basePosition);
       
@@ -62,7 +62,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // 2. GLAVNA ANIMACIJA DO ODREDIŠTA
+  // 2. GLAVNA ANIMACIJA
   function animateTo(targetPosition) {
     gsap.to(scrollProxy, {
       x: targetPosition,
@@ -111,7 +111,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  // 5. OBRNUTI SMJER NA KOTAČIĆU MIŠA
+  // 5. KOTAČIĆ MIŠA
   container.addEventListener("wheel", (e) => {
     e.preventDefault();
     stopAutoplay();
