@@ -43,8 +43,7 @@ document.addEventListener("DOMContentLoaded", () => {
       let basePosition = (i * slideWidth) + scrollProxy.x;
       
     
-      // Čim slika ode lijevo iza -620, automatski se iscrtava na desnom kraju (3100px)
-      // i obrnuto. Nema treperenja jer matematika ne ovisi o skoku cijele trake.
+      // Čim slika ode lijevo iza -620, automatski se iscrtava na desnom kraju (3100)
       let wrappedX = gsap.utils.wrap(-slideWidth, totalWidth - slideWidth, basePosition);
       
       gsap.set(slide, { 
@@ -74,7 +73,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // 3. GSAP AUTOPLAY LOGIKA
+  // 3. GSAP AUTOPLAY
   function startAutoplay() {
     if (!isAutoplayEnabled) return;
 
