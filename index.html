@@ -8,6 +8,42 @@
   <!-- Provjereni i stabilni GSAP CDN -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
   
+  <!-- Povezivanje zasebnih CSS i JS datoteka iz njihovih mapa -->
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/script.js" defer></script>
+</head>
+<body>
+
+  <h1 class="main-title">Automatski vrtuljak slika</h1>
+
+  <div class="carousel-container">
+    <div class="carousel-track">
+      <!-- 6 originalnih slika iz mape 'slike' -->
+      <div class="slide"><img src="slike/slika1.jpg" alt="Slika 1"></div>
+      <div class="slide"><img src="slike/slika2.jpg" alt="Slika 2"></div>
+      <div class="slide"><img src="slike/slika3.jpg" alt="Slika 3"></div>
+      <div class="slide"><img src="slike/slika4.jpg" alt="Slika 4"></div>
+      <div class="slide"><img src="slike/slika5.jpg" alt="Slika 5"></div>
+      <div class="slide"><img src="slike/slika6.jpg" alt="Slika 6"></div>
+    </div>
+  </div>
+
+  <button id="toggleAutoplay" class="play-pause-btn">
+    <span id="btn-icon">❚❚</span> <span id="btn-text">Pauziraj</span>
+  </button>
+
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Beskonačni Horizontalni Vrtuljak - Stabilna Verzija</title>
+  
+  <!-- Provjereni i stabilni GSAP CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  
   <style>
     * {
       box-sizing: border-box;
